@@ -12,6 +12,7 @@ CREATE TABLE profiles (
     height NUMERIC(5,2) CHECK (height > 0),
     weight NUMERIC(5,2) CHECK (weight > 0),
     gender VARCHAR(10) CHECK (gender IN ('male', 'female')),
+    race VARCHAR(50) DEFAULT 'other_race', -- <-- НОВАЯ СТРОКА
     goal VARCHAR(50) CHECK (goal IN ('похудение', 'набор массы', 'поддержание')) DEFAULT 'поддержание',
     activity_level NUMERIC(3,2) DEFAULT 1.2 CHECK (activity_level >= 1.0 AND activity_level <= 2.5),
     has_diabetes BOOLEAN NOT NULL DEFAULT FALSE
